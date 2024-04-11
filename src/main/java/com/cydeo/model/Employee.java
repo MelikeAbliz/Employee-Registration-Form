@@ -3,9 +3,9 @@ package com.cydeo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -13,13 +13,15 @@ import java.util.List;
 public class Employee {
     private String firstName;
     private String lastName;
-    private Date birthDay;
+//thymeleaf accepts yyyy-MM-dd format
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthDay;
     private String email;
     private String password;
     private String address;
     private String address2;
     private String city;
-    private List<String> state;
+    private String state;
     private String zip;
 
 
