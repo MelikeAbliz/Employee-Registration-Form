@@ -18,7 +18,9 @@ public class EmployeeController {
 //        return "employee/employee-register";
 //    }
 @GetMapping("/register")
-public String createEmployee(){
+public String createEmployee(Model model){
+    model.addAttribute("stateList",DataGenerator.createEmployeeState());
+    model.addAttribute("employee",new Employee());
     return "employee/employee-create";
 }
 
